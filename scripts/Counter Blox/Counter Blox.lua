@@ -42,6 +42,10 @@ if (listfiles == false) then return game.Players.LocalPlayer:Kick("Exploit not s
 if (isfolder == false) then return game.Players.LocalPlayer:Kick("Exploit not supported! Missing: isfolder.") end
 if (hookfunc == false) then return game.Players.LocalPlayer:Kick("Exploit not supported! Missing: hookfunc.") end
 
+-- Notification Library
+local Notification = loadstring(game:HttpGet("https://api.irisapp.ca/Scripts/IrisBetterNotifications.lua"))()
+
+
 -- Config Checking
 if not isfolder("GhoulHub") then
 	print("Ghoul Hub | [CONFIG] Creating GhoulHub Folder...")
@@ -92,9 +96,11 @@ local function IsAlive(plr)
 	return false
 end
 
--- Extra Utility 
+
+-- Extra Utilities
 local skyboxes = loadstring("return "..readfile("GhoulHub/Configs/Counter Blox/skyboxes.txt"))()
 local ESP = loadstring(game:HttpGet("https://raw.githubusercontent.com/xFGhoul/GhoulHub/master/ESP.lua"))()
+local IrisInit = loadstring(game:HttpGet("https://irishost.xyz/InfinityHosting/IrisInit.lua"))()
 
 
 -- Load UI LIbrary

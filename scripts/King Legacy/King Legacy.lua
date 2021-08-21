@@ -67,6 +67,9 @@ local function IsAlive(plr)
 	return false
 end
 
+-- Extra Utilities
+local IrisInit = loadstring(game:HttpGet("https://irishost.xyz/InfinityHosting/IrisInit.lua"))()
+
 
 -- Load UI LIbrary
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
