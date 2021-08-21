@@ -9,8 +9,8 @@
                                                                             
 
     Developer: Ghoul#6066
-    File: Grand Piece.lua
-    Description: Source Code of Grand Piece Exploit
+    File: Anime Fighting Simulator.lua
+    Description: Source Code of AFS(Anime Fighting Simulator) Exploit
 ]]
 
 repeat wait() until game:IsLoaded()
