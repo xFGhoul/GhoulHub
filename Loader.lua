@@ -27,6 +27,12 @@ local DaHoodId = 2788229376
 local GrandPieceId = 1730877806
 local KingLegacyId = 4520749081
 local RoGhoulId = 914010731
+local BigPaintballID = 3527629287
+local FinalStandID = 536102540
+local ProjectXLID = 6186867282
+local ShindoLifeID = 4616652839
+local TowerOfHellID = 1962086868
+
 
 
 if game.PlaceId == AsernalID then
@@ -84,6 +90,26 @@ elseif game.PlaceId ==  KingLegacyId then
 elseif game.PlaceId ==  RoGhoulId then
     print("Ghoul Hub | [DETECTOR] RO GHOUL DETECTED")
     loadstring(game:HttpGet("https://raw.githubusercontent.com/xFGhoul/GhoulHub/master/scripts/Ro-Ghoul/Ro%20Ghoul.lua"))()
+
+elseif game.PlaceId ==  BigPaintballID then
+    print("Ghoul Hub | [DETECTOR] BIG PAINTBALL DETECTED")
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/xFGhoul/GhoulHub/master/scripts/Big%20Paintball/Big%20Paintball.lua"))()
+
+elseif game.PlaceId ==  FinalStandID then
+    print("Ghoul Hub | [DETECTOR] FINAL STAND DETECTED")
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/xFGhoul/GhoulHub/master/scripts/Final%20Stand/Final%20Stand.lua"))()
+
+elseif game.PlaceId ==  ProjectXLID then
+    print("Ghoul Hub | [DETECTOR] PROJECT XL DETECTED")
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/xFGhoul/GhoulHub/master/scripts/Project%20XL/Project%20XL.lua"))()
+
+elseif game.PlaceId ==  ShindoLifeID then
+    print("Ghoul Hub | [DETECTOR] SHINDO LIFE DETECTED")
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/xFGhoul/GhoulHub/master/scripts/Shindo%20Life/Shindo%20Life.lua"))()
+
+elseif game.PlaceId ==  TowerOfHellID then
+    print("Ghoul Hub | [DETECTOR] TOWER OF HELL DETECTED")
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/xFGhoul/GhoulHub/master/scripts/Tower%20Of%20Hell/Tower%20Of%20Hell.lua"))()
 
 else
     game.Players.LocalPlayer:Kick("Ghoul Hub | [ERROR] GAME NOT SUPPORTED")
