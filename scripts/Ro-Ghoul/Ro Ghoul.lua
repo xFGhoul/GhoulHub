@@ -96,19 +96,19 @@ Settings:NewLabel("GhoulHub Version " .. GhoulHubVersion)
 
 Settings:NewLabel("Press Right CTRL to Toggle UI")
 
-SettingsMain:NewKeybind("Toggle UI", "KeybindInfo", Enum.KeyCode.RightControl, function()
+SettingsMain:NewKeybind("Toggle UI", "Key To Toggle UI On/Off", Enum.KeyCode.RightControl, function()
 	Library:ToggleUI()
 end)
 
-Settings:NewButton("Copy Discord Invite", "ButtonInfo", function()
+Settings:NewButton("Copy Discord Invite", "Copies Discord Server Invite to Clipboard", function()
 	setclipboard("https://discord.gg/pornhub") -- TODO: SETUP SERVER
 end)
 
-Settings:NewButton("Rejoin Server", "ButtonInfo", function()
+Settings:NewButton("Rejoin Server", "Rejoins Current Roblox Game", function()
 	TeleportService:TeleportToPlaceInstance(game.PlaceId, game.JobId, LocalPlayer)
 end)
 
-Settings:NewButton("Hop Server", "ButtonInfo", function()
+Settings:NewButton("Hop Server", "Joins A New Roblox Game", function()
 	TeleportService:TeleportToPlaceInstance(game.PlaceId, game:GetService("Players").LocalPlayer) 
 end)
 
