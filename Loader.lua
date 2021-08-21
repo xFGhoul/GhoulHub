@@ -32,6 +32,10 @@ local FinalStandID = 536102540
 local ProjectXLID = 6186867282
 local ShindoLifeID = 4616652839
 local TowerOfHellID = 1962086868
+local AllStarTowerDefenseID = 4996049426
+local BloxburgID = 185655149
+local BrookhavenRPID = 4924922222
+local PetSimulatorXID = 6284583030
 
 
 
@@ -110,6 +114,22 @@ elseif game.PlaceId ==  ShindoLifeID then
 elseif game.PlaceId ==  TowerOfHellID then
     print("Ghoul Hub | [DETECTOR] TOWER OF HELL DETECTED")
     loadstring(game:HttpGet("https://raw.githubusercontent.com/xFGhoul/GhoulHub/master/scripts/Tower%20Of%20Hell/Tower%20Of%20Hell.lua"))()
+
+elseif game.PlaceId ==  AllStarTowerDefenseID then
+    print("Ghoul Hub | [DETECTOR] ALL STAR TOWER DEFENSE DETECTED")
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/xFGhoul/GhoulHub/master/scripts/All%20Star%20Tower%20Defense/All%20Star%20Tower%20Defense.lua"))()
+
+elseif game.PlaceId ==  BloxburgID then
+    print("Ghoul Hub | [DETECTOR] BLOXBURG DETECTED")
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/xFGhoul/GhoulHub/master/scripts/Bloxburg/Bloxburg.lua"))()
+
+elseif game.PlaceId ==  BrookhavenRPID then
+    print("Ghoul Hub | [DETECTOR] BROOKHAVEN RP DETECTED")
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/xFGhoul/GhoulHub/master/scripts/Brookhaven%20RP/Brookhaven%20RP.lua"))()
+
+elseif game.PlaceId ==  PetSimulatorXID then
+    print("Ghoul Hub | [DETECTOR] PET SIMULATOR X DETECTED")
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/xFGhoul/GhoulHub/master/scripts/Pet%20Simulator%20X/Pet%20Simulator%20X.lua"))()
 
 else
     game.Players.LocalPlayer:Kick("Ghoul Hub | [ERROR] GAME NOT SUPPORTED")
