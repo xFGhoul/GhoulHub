@@ -1,14 +1,16 @@
 --[[
+    
     ██████╗  ██╗  ██╗ ██████╗ ██╗   ██╗██╗         ██╗  ██╗██╗   ██╗██████╗ 
     ██╔════╝ ██║  ██║██╔═══██╗██║   ██║██║         ██║  ██║██║   ██║██╔══██╗
     ██║  ███╗███████║██║   ██║██║   ██║██║         ███████║██║   ██║██████╔╝
     ██║   ██║██╔══██║██║   ██║██║   ██║██║         ██╔══██║██║   ██║██╔══██╗
     ╚██████╔╝██║  ██║╚██████╔╝╚██████╔╝███████╗    ██║  ██║╚██████╔╝██████╔╝
     ╚═════╝ ╚═╝  ╚═╝ ╚═════╝  ╚═════╝ ╚══════╝     ╚═╝  ╚═╝ ╚═════╝ ╚═════╝ 
+                                                                            
 
     Developer: Ghoul#6066
-    File: Blox Fruits.lua
-    Description: Source Code of Blox Fruits Exploit
+    File: Your Bizzare Adventure.lua
+    Description: Source Code of Your Bizzare Adventure Exploit
 ]]
 
 repeat wait() until game:IsLoaded()
@@ -70,6 +72,7 @@ end
 
 -- Extra Utilities
 local IrisInit = loadstring(game:HttpGet("https://irishost.xyz/InfinityHosting/IrisInit.lua"))()
+
 
 -- Load UI LIbrary
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()

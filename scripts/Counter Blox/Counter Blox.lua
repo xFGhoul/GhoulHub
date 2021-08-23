@@ -12,8 +12,6 @@
     Description: Source Code of Counter Blox Exploit
 ]]
 
-repeat wait() until game:IsLoaded()
-repeat wait() until game.Players.LocalPlayer.PlayerGui:FindFirstChild("GUI")
 
 -- Services
 local UserInputService = game:GetService("UserInputService")
@@ -29,6 +27,7 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local getrawmetatable = getrawmetatable or false
 local mousemove = mousemove or mousemoverel or mouse_move or false
 local getsenv = getsenv or false
+local getgenv = getgenv or false
 local listfiles = listfiles or listdir or syn_io_listdir or false
 local isfolder = isfolder or false
 local hookfunc = hookfunc or hookfunction or replaceclosure or false
@@ -41,9 +40,10 @@ if (getsenv == false) then return game.Players.LocalPlayer:Kick("Exploit not sup
 if (listfiles == false) then return game.Players.LocalPlayer:Kick("Exploit not supported! Missing: listfiles.") end
 if (isfolder == false) then return game.Players.LocalPlayer:Kick("Exploit not supported! Missing: isfolder.") end
 if (hookfunc == false) then return game.Players.LocalPlayer:Kick("Exploit not supported! Missing: hookfunc.") end
+if (getgenv == false) then return game.Players.LocalPlayer:Kick("Exploit not supported! Missing: getgenv.") end
 
 -- Notification Library
-local Notification = loadstring(game:HttpGet("https://api.irisapp.ca/Scripts/IrisBetterNotifications.lua"))()
+local Util = loadstring(game.HttpGet("https://raw.githubusercontent.com/xFGhoul/GhoulHub/master/Utils/Functions.lua"))
 
 
 -- Config Checking
@@ -73,7 +73,7 @@ end
 
 if not isfile("GhoulHub/Configs/Counter Blox/skyboxes.txt") then
 	print("Ghoul Hub | [UTIL] Downloading GhoulHub SkyBoxes File...")
-	writefile("GhoulHub/Configs/Counter Blox/skyboxes.txt", game:HttpGet("https://raw.githubusercontent.com/xFGhoul/GhoulHub/master/data/skyboxes.txt"))
+	writefile("GhoulHub/Configs/Counter Blox/skyboxes.txt", game:HttpGet("https://raw.githubusercontent.com/Pawel12d/hexagon/main/scripts/default_data/skyboxes.txt"))
 	print("Ghoul Hub | [UTIL] GhoulHub SkyBoxes File Downloaded.")
 end
 
@@ -99,7 +99,7 @@ end
 
 -- Extra Utilities
 local skyboxes = loadstring("return "..readfile("GhoulHub/Configs/Counter Blox/skyboxes.txt"))()
-local ESP = loadstring(game:HttpGet("https://raw.githubusercontent.com/xFGhoul/GhoulHub/master/ESP.lua"))()
+-- local ESP = loadstring(game:HttpGet("https://raw.githubusercontent.com/xFGhoul/GhoulHub/master/ESP.lua"))()
 local IrisInit = loadstring(game:HttpGet("https://irishost.xyz/InfinityHosting/IrisInit.lua"))()
 
 
@@ -109,8 +109,8 @@ local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHept
 
 -- Create GUI
 print("Ghoul Hub | [UI] Creating UI Library...")
-local Window = Library.CreateLib("Ghoul Hub |  " .. GAME_NAME, "DarkTheme")
-print("Ghoul Hub | [UI] UI Library for " .. GAME_NAME .. "Created.")
+local Window = Library.CreateLib("Ghoul Hub |  ", "DarkTheme")
+print("Ghoul Hub | [UI] UI Library for Created.")
 
 
 -- Main Code
@@ -123,6 +123,7 @@ local AimbotTab = Window:NewTab("Aimbot")
 local AimbotTabCategoryLegit = AimbotTab:NewSection("Legit")
 
 local AimbotTabCategoryLegitLabel = AimbotTabCategoryLegit:NewLabel("Legit")
+
 
 AimbotTabCategoryLegit:NewToggle("Enabled", "ToggleInfo", function(state)
     if state then
