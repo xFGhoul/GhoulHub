@@ -13,7 +13,7 @@
 ]]
 
  -- Notification Library
-local Util = loadstring(game.HttpGet("https://raw.githubusercontent.com/xFGhoul/GhoulHub/master/Utils/Functions.lua"))
+local Util = loadstring(game.HttpGet("https://raw.githubusercontent.com/xFGhoul/GhoulHub/dev/Utils/Functions.lua"))
 
 Util:Notify("Ghoul Hub", "Waiting For Game To Load...", 4, "rbxasset://textures/GhoulHub/ghoulhub_logo.png")
 
@@ -179,7 +179,7 @@ end
 
 -- Extra Utilities
 local skyboxes = loadstring("return "..readfile("GhoulHub/Configs/Counter Blox/skyboxes.txt"))()
-local ESP = loadstring(game:HttpGet("https://raw.githubusercontent.com/xFGhoul/GhoulHub/master/ESP.lua"))()
+local ESP = loadstring(game:HttpGet("https://raw.githubusercontent.com/xFGhoul/GhoulHub/dev/ESP.lua"))()
 local IrisInit = loadstring(game:HttpGet("https://irishost.xyz/InfinityHosting/IrisInit.lua"))()
 
 
