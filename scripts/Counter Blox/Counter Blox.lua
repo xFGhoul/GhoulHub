@@ -12,6 +12,15 @@
     Description: Source Code of Counter Blox Exploit
 ]]
 
+ -- Notification Library
+local Util = loadstring(game.HttpGet("https://raw.githubusercontent.com/xFGhoul/GhoulHub/master/Utils/Functions.lua"))
+
+Util:Notify("Ghoul Hub", "Waiting For Game To Load...", 4, "rbxasset://textures/GhoulHub/ghoulhub_logo.png")
+
+repeat wait() until game:IsLoaded()
+repeat wait() until game.Players.LocalPlayer.PlayerGui:FindFirstChild("GUI")
+
+Util:Notify("Ghoul Hub", "Setting Up Environment...", 3, "rbxasset://textures/GhoulHub/ghoulhub_logo.png")
 
 -- Services
 local UserInputService = game:GetService("UserInputService")
@@ -42,39 +51,38 @@ if (isfolder == false) then return game.Players.LocalPlayer:Kick("Exploit not su
 if (hookfunc == false) then return game.Players.LocalPlayer:Kick("Exploit not supported! Missing: hookfunc.") end
 if (getgenv == false) then return game.Players.LocalPlayer:Kick("Exploit not supported! Missing: getgenv.") end
 
--- Notification Library
-local Util = loadstring(game.HttpGet("https://raw.githubusercontent.com/xFGhoul/GhoulHub/master/Utils/Functions.lua"))
+Util:Notify("Ghoul Hub", "Setting Up Config Settings...", 3, "rbxasset://textures/GhoulHub/ghoulhub_logo.png")
 
 
 -- Config Checking
 if not isfolder("GhoulHub") then
-	print("Ghoul Hub | [CONFIG] Creating GhoulHub Folder...")
+    Util:Notify("Ghoul Hub", "Creating GhoulHub Folder...", 3, "rbxasset://textures/GhoulHub/ghoulhub_logo.png")
 	makefolder("GhoulHub")
-	print("Ghoul Hub | [CONFIG] GhoulHub Folder Created.")
+    Util:Notify("Ghoul Hub", "Ghoul Hub Folder Created.", 3, "rbxasset://textures/GhoulHub/checkmark.png")
 end
 
 if not isfolder("GhoulHub/Configs") then
-	print("Ghoul Hub | [CONFIG] Creating Configs Folder...")
+	Util:Notify("Ghoul Hub", "Creating GhoulHub Folder...", 3, "rbxasset://textures/GhoulHub/ghoulhub_logo.png")
     makefolder("GhoulHub/Configs")
-	print("Ghoul Hub | [CONFIG] Configs Folder Created.")
+	Util:Notify("Ghoul Hub", "Configs Folder Created.", 3, "rbxasset://textures/GhoulHub/checkmark.png")
 end
 
 if not isfolder("GhoulHub/Configs/Counter Blox") then
-    print("Ghoul Hub | [CONFIG] Creating Counter Blox Config Folder...")
+	Util:Notify("Ghoul Hub", "Creating Counter Blox Config Folder...", 3, "rbxasset://textures/GhoulHub/ghoulhub_logo.png")
     makefolder("GhoulHub/Configs/Counter Blox")
-	print("Ghoul Hub | [CONFIG] Counter Blox Config Folder Created.")
+	Util:Notify("Ghoul Hub", "Counter Blox Config Folder Created.", 3, "rbxasset://textures/GhoulHub/checkmark.png")
 end
 
 if not isfolder("GhoulHub/Configs/Counter Blox/Settings") then
-    print("Ghoul Hub | [CONFIG] Creating Counter Blox Config Settings Folder...")
+	Util:Notify("Ghoul Hub", "Creating Counter Blox Config Settings Folder...", 3, "rbxasset://textures/GhoulHub/ghoulhub_logo.png")
     makefolder("GhoulHub/Configs/Counter Blox/Settings")
-	print("Ghoul Hub | [CONFIG] Counter Blox Config Settings Folder Created.")
+	Util:Notify("Ghoul Hub", "Creating Counter Blox Config Settings Folder Created.", 3, "rbxasset://textures/GhoulHub/checkmark.png")
 end
 
 if not isfile("GhoulHub/Configs/Counter Blox/skyboxes.txt") then
-	print("Ghoul Hub | [UTIL] Downloading GhoulHub SkyBoxes File...")
+	Util:Notify("Ghoul Hub", "Downloading GhoulHub SkyBoxes File...", 4, "rbxasset://textures/GhoulHub/download.png")
 	writefile("GhoulHub/Configs/Counter Blox/skyboxes.txt", game:HttpGet("https://raw.githubusercontent.com/Pawel12d/hexagon/main/scripts/default_data/skyboxes.txt"))
-	print("Ghoul Hub | [UTIL] GhoulHub SkyBoxes File Downloaded.")
+	Util:Notify("Ghoul Hub", "GhoulHub SkyBoxes File Downloaded.", 3, "rbxasset://textures/GhoulHub/checkmark.png")
 end
 
 -- Game Constants
@@ -96,10 +104,82 @@ local function IsAlive(plr)
 	return false
 end
 
+local function IsVisible(pos, ignoreList)
+	return #workspace.CurrentCamera:GetPartsObscuringTarget({LocalPlayer.Character.Head.Position, pos}, ignoreList) == 0 and true or false
+end
+
+local function GetSite()
+	if (LocalPlayer.Character.HumanoidRootPart.Position - workspace.Map.SpawnPoints.C4Plant.Position).magnitude > (LocalPlayer.Character.HumanoidRootPart.Position - workspace.Map.SpawnPoints.C4Plant2.Position).magnitude then
+		return "A"
+	else
+		return "B"
+	end
+end
+
+local function PlantC4()
+	pcall(function()
+	if IsAlive(LocalPlayer) and workspace.Map.Gamemode.Value == "defusal" and workspace.Status.Preparation.Value == false and not planting then 
+		planting = true
+		local pos = LocalPlayer.Character.HumanoidRootPart.CFrame 
+		workspace.CurrentCamera.CameraType = "Fixed"
+		LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Map.SpawnPoints.C4Plant.CFrame
+		wait(0.2)
+		game.ReplicatedStorage.Events.PlantC4:FireServer((pos + Vector3.new(0, -2.75, 0)) * CFrame.Angles(math.rad(90), 0, math.rad(180)), GetSite())
+		wait(0.2)
+		LocalPlayer.Character.HumanoidRootPart.CFrame = pos
+		LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0, 0, 0)
+		game.Workspace.CurrentCamera.CameraType = "Custom"
+		planting = false
+	end
+	end)
+end
+
+local function DefuseC4()
+	pcall(function()
+	if IsAlive(LocalPlayer) and workspace.Map.Gamemode.Value == "defusal" and not defusing and workspace:FindFirstChild("C4") then 
+		defusing = true
+		LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0, 0, 0)
+		local pos = LocalPlayer.Character.HumanoidRootPart.CFrame 
+		workspace.CurrentCamera.CameraType = "Fixed"
+		LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.C4.Handle.CFrame + Vector3.new(0, 2, 0)
+		LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0, 0, 0)
+		wait(0.1)
+		LocalPlayer.Backpack.PressDefuse:FireServer(workspace.C4)
+		LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0, 0, 0)
+		wait(0.25)
+		if IsAlive(LocalPlayer) and workspace:FindFirstChild("C4") and workspace.C4:FindFirstChild("Defusing") and workspace.C4.Defusing.Value == LocalPlayer then
+			LocalPlayer.Backpack.Defuse:FireServer(workspace.C4)
+		end
+		LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0, 0, 0)
+		wait(0.2)
+		LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0, 0, 0)
+		LocalPlayer.Character.HumanoidRootPart.CFrame = pos
+		LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0, 0, 0)
+		game.Workspace.CurrentCamera.CameraType = "Custom"
+		defusing = false
+	end
+	end)
+end
+
+function GetSpectators()
+	local CurrentSpectators = {}
+	
+	for i,v in pairs(game:GetService("Players"):GetChildren()) do 
+		if v ~= game:GetService("Players").LocalPlayer then
+			if not v.Character and v:FindFirstChild("CameraCF") and (v.CameraCF.Value.Position - workspace.CurrentCamera.CFrame.p).Magnitude < 10 then 
+				table.insert(CurrentSpectators, v)
+			end
+		end
+	end
+	
+	return CurrentSpectators
+end
+
+
 
 -- Extra Utilities
 local skyboxes = loadstring("return "..readfile("GhoulHub/Configs/Counter Blox/skyboxes.txt"))()
--- local ESP = loadstring(game:HttpGet("https://raw.githubusercontent.com/xFGhoul/GhoulHub/master/ESP.lua"))()
+local ESP = loadstring(game:HttpGet("https://raw.githubusercontent.com/xFGhoul/GhoulHub/master/ESP.lua"))()
 local IrisInit = loadstring(game:HttpGet("https://irishost.xyz/InfinityHosting/IrisInit.lua"))()
 
 
@@ -113,8 +193,8 @@ local Window = Library.CreateLib("Ghoul Hub |  ", "DarkTheme")
 print("Ghoul Hub | [UI] UI Library for Created.")
 
 
--- Main Code
 
+-- MAIN CODE
 
 -- AIMBOT
 

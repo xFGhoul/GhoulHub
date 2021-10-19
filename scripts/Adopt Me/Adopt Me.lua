@@ -13,6 +13,9 @@
     Description: Source Code of Adopt Me Exploit
 ]]
 
+-- Notification Library
+local Util = loadstring(game.HttpGet("https://raw.githubusercontent.com/xFGhoul/GhoulHub/master/Utils/Functions.lua"))
+
 repeat wait() until game:IsLoaded()
 repeat wait() until game.Players.LocalPlayer.PlayerGui:FindFirstChild("GUI")
 
@@ -41,14 +44,12 @@ if (listfiles == false) then return LocalPlayer:Kick("Exploit not supported! Mis
 if (getsenv == false) then return LocalPlayer:Kick("Exploit not supported! Missing: getsenv") end
 if (hookfunc == false) then return LocalPlayer:Kick("Exploit not supported! Missing: hookfunc.") end
 
--- Notification Library
-local Util = loadstring(game.HttpGet("https://raw.githubusercontent.com/xFGhoul/GhoulHub/master/Utils/Functions.lua"))
-
+ 
 -- Config Checking
 if not isfolder("GhoulHub") then
-	print("Ghoul Hub | [CONFIG] Creating GhoulHub Folder...")
+    Util:Notify("Ghoul Hub", "Creating GhoulHub Folder...", 5, "rbxasset://textures/GhoulHub/ghoulhub_logo.png")
 	makefolder("GhoulHub")
-    print("Ghoul Hub | [CONFIG] GhoulHub Folder Created.")
+    Util:Notify("Ghoul Hub", "Ghoul Hub Folder Created", 3, "rbxasset://textures/GhoulHub/checkmark.png")
 end
 
 if not isfolder("GhoulHub/Configs") then

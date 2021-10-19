@@ -13,6 +13,9 @@
     Description: Source Code of Grand Piece Exploit
 ]]
 
+ -- Notification Library
+local Util = loadstring(game.HttpGet("https://raw.githubusercontent.com/xFGhoul/GhoulHub/master/Utils/Functions.lua"))
+
 repeat wait() until game:IsLoaded()
 repeat wait() until game.Players.LocalPlayer.PlayerGui:FindFirstChild("GUI")
 
@@ -40,9 +43,6 @@ if (getrawmetatable == false) then return LocalPlayer:Kick("Exploit not supporte
 if (listfiles == false) then return LocalPlayer:Kick("Exploit not supported! Missing: listfiles.") end
 if (getsenv == false) then return LocalPlayer:Kick("Exploit not supported! Missing: getsenv") end
 if (hookfunc == false) then return LocalPlayer:Kick("Exploit not supported! Missing: hookfunc.") end
-
--- Notification Library
-local Util = loadstring(game.HttpGet("https://raw.githubusercontent.com/xFGhoul/GhoulHub/master/Utils/Functions.lua"))
 
 
 -- Config Checking

@@ -145,7 +145,7 @@ elseif game.PlaceId == AnimeFightersSimulatorID then
 elseif game.PlaceId == YourBizzareAdventureID then
     Util:Notify("Ghoul Hub | 1.0", "Your Bizzare Adevnture Detected, Executing GUI", 3, "rbxasset://textures/GhoulHub/ghoulhub_logo.png")
     loadstring(game:HttpGet("https://raw.githubusercontent.com/xFGhoul/GhoulHub/master/scripts/Your%20Bizzare%20Adventure/Your%20Bizzare%20Adventure.lua"))()
-    
+
 elseif game.PlaceId == BeeSwarmSimulatorID then
     Util:Notify("Ghoul Hub | 1.0", "Bee Swarm Simulator Detected, Executing GUI", 3, "rbxasset://textures/GhoulHub/ghoulhub_logo.png")
     loadstring(game:HttpGet("https://raw.githubusercontent.com/xFGhoul/GhoulHub/master/scripts/Bee%20Swarm%20Simulator/Bee%20Swarm%20Simulator.lua"))()

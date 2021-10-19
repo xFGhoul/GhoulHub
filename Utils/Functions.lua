@@ -15,7 +15,9 @@
 
 local Notification = loadstring(game:HttpGet("https://api.irisapp.ca/Scripts/IrisBetterNotifications.lua"))()
 
-local Util = {}
+local Util = {
+    
+}
 
 
 function Util:NewNotification(Title, Description, Duration, ImageAsset)

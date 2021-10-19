@@ -1,2 +1,5 @@
 # GhoulHub
-Roblox Exploit Hub Source Code
+
+Roblox Exploit Hub That Supports Multiple Games(25+)
+
+> Made with :heart: by Ghoul

@@ -13,6 +13,9 @@
     Description: Source Code of Ro-Ghoul Exploit
 ]]
 
+ -- Notification Library
+local Util = loadstring(game.HttpGet("https://raw.githubusercontent.com/xFGhoul/GhoulHub/master/Utils/Functions.lua"))
+
 repeat wait() until game:IsLoaded()
 repeat wait() until game.Players.LocalPlayer.PlayerGui:FindFirstChild("GUI")
 
@@ -41,8 +44,6 @@ if (listfiles == false) then return LocalPlayer:Kick("Exploit not supported! Mis
 if (getsenv == false) then return LocalPlayer:Kick("Exploit not supported! Missing: getsenv") end
 if (hookfunc == false) then return LocalPlayer:Kick("Exploit not supported! Missing: hookfunc.") end
 
--- Notification Library
-local Util = loadstring(game.HttpGet("https://raw.githubusercontent.com/xFGhoul/GhoulHub/master/Utils/Functions.lua"))
 
 -- Config Checking
 if not isfolder("GhoulHub") then
