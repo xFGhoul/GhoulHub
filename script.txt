@@ -8,7 +8,7 @@
     ╚═════╝ ╚═╝  ╚═╝ ╚═════╝  ╚═════╝ ╚══════╝     ╚═╝  ╚═╝ ╚═════╝ ╚═════╝ 
                                                                             
 
-    Developer: Ghoul#6066
+    Developer: Ghoul#1337
     Supported Executors: Krnl & Synapse (Others I've never tested)
 
 ]]

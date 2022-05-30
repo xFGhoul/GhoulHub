@@ -8,7 +8,7 @@
     ╚═════╝ ╚═╝  ╚═╝ ╚═════╝  ╚═════╝ ╚══════╝     ╚═╝  ╚═╝ ╚═════╝ ╚═════╝ 
                                                                             
 
-    Developer: Ghoul#6066
+    Developer: Ghoul#1337
     File: Anime Fighting Simulator.lua
     Description: Source Code of AFS(Anime Fighting Simulator) Exploit
 ]]
@@ -110,7 +110,7 @@ SettingsMain:NewKeybind("Toggle UI", "Key To Toggle UI On/Off", Enum.KeyCode.Rig
 end)
 
 Settings:NewButton("Copy Discord Invite", "Copies Discord Server Invite to Clipboard", function()
-	setclipboard("https://discord.gg/pornhub") -- TODO: SETUP SERVER
+	setclipboard("https://https://discord.gg/8fKcb9gmwr") 
 end)
 
 Settings:NewButton("Rejoin Server", "Rejoins Current Roblox Game", function()
@@ -122,5 +122,5 @@ Settings:NewButton("Hop Server", "Joins A New Roblox Game", function()
 end)
 
 Settings:NewLabel("Credits")
-Settings:NewLabel("Script - Ghoul#6066")
+Settings:NewLabel("Script - Ghoul#1337")
 Settings:NewLabel("UI Library - Kavo UI Library")

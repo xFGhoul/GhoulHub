@@ -8,10 +8,11 @@
     ╚═════╝ ╚═╝  ╚═╝ ╚═════╝  ╚═════╝ ╚══════╝     ╚═╝  ╚═╝ ╚═════╝ ╚═════╝ 
                                                                             
 
-    Developer: Ghoul#6066    
+    Developer: Ghoul#1337    
     File: Loader.lua
     Description: Source Code of Hub Loader
 ]]
+
 
 -- Place IDS
 local AsernalID = 286090429

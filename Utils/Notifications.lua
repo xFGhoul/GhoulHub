@@ -8,19 +8,19 @@
     ╚═════╝ ╚═╝  ╚═╝ ╚═════╝  ╚═════╝ ╚══════╝     ╚═╝  ╚═╝ ╚═════╝ ╚═════╝ 
                                                                             
 
-    Developer: Ghoul#6066    
+    Developer: Ghoul#1337    
     File: Functions.lua
-    Description: GhoulHub Functions
+    Description: GhoulHub Notifications
 ]]
 
 local Notification = loadstring(game:HttpGet("https://api.irisapp.ca/Scripts/IrisBetterNotifications.lua"))()
 
-local Util = {
+local Notifications = {
     
 }
 
 
-function Util:NewNotification(Title, Description, Duration, ImageAsset)
+function Notifications:New(Title, Description, Duration, ImageAsset)
     Notification.Notify(Title, Description, ImageAsset,  {
         Duration = Duration,
         Main = {
